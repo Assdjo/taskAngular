@@ -1,0 +1,14 @@
+<div [ngSwitch]="selectedLanguage">
+    <div *ngSwitchCase="'TypeScript'" [ngStyle]="{'background-color':bgcolor}">TypeScript est un sur-ensemble typé de JavaScript.</div>
+    <div *ngSwitchCase="'Swift'" [ngStyle]="{'background-color':bgcolor}">Swift est un langage de programmation pour iOS et macOS.</div>
+    <div *ngSwitchCase="'Kotlin'" [ngStyle]="{'background-color':bgcolor}">Kotlin est utilisé principalement pour le développement Android.</div>
+    <div *ngSwitchCase="'Go (Golang)'" [ngStyle]="{'background-color':bgcolor}">Go est connu pour sa simplicité et ses performances.</div>
+    <div *ngSwitchCase="'Ruby'" [ngStyle]="{'background-color':bgcolor}">Ruby est souvent utilisé dans le développement web avec Rails.</div>
+    <div *ngSwitchCase="'PHP'" [ngStyle]="{'background-color':bgcolor}">PHP est largement utilisé pour le développement web côté serveur.</div>
+    <div *ngSwitchCase="'C++'" [ngStyle]="{'background-color':bgcolor}">C++ est un langage orienté objet très performant.</div>
+    <div *ngSwitchCase="'Java'" [ngStyle]="{'background-color':bgcolor}">Java est utilisé dans une variété d'applications, y compris Android.</div>
+    <div *ngSwitchCase="'Python'" [ngStyle]="{'background-color':bgcolor}">Python est connu pour sa simplicité et sa lisibilité.</div>
+    <div *ngSwitchCase="'JavaScript'" [ngStyle]="{'background-color':bgcolor}">JavaScript est essentiel pour le développement web moderne.</div>
+    <div *ngSwitchDefault [ngStyle]="{'background-color':bgcolor}">Sélectionnez un langage pour en savoir plus.</div>
+  </div>
+ 

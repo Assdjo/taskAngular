@@ -1,0 +1,11 @@
+<ul class="divide-y divide-gray-200 px-1 h-[200px] scrollbar">
+    <li class="py-4 px-4" *ngFor="let task of Task; let i = index" [ngClass]="task.statut?'bg-green-300':''">
+        <div class="flex items-center" >
+            <input id="complete" name="complete" type="checkbox" [checked]="task.statut" (click)="toggle(i)"
+                class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded">
+            <label for="complete" class="ml-3 block text-gray-900">
+                <span class="text-lg font-medium">{{ task.titreTask }}</span>
+            </label>
+        </div>
+    </li>
+</ul>

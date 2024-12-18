@@ -1,0 +1,26 @@
+
+
+<div class="flex justify-center mb-6 mt-6">
+    <table>
+        <thead>
+            <tr>
+                <th>Statut</th>
+                <th>N°</th>
+                <th>Nom du langage</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let language of listeslanguages; let i = index" (click)="onLanguageClick(language)">
+                <td  >
+                    <input title="checkbox" type="checkbox">
+                         
+                </td>
+                <td> {{i+1}}</td>
+                <td [ngClass]="selectedLanguage === language?'active':'inactive'"> {{language}}</td>
+                <td>Supprimer</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

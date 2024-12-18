@@ -1,0 +1,8 @@
+<h1 *ngIf="showLanguages">liste des languages à afficher dans notre dom</h1>
+
+<app-affiche-liste-languages [listeslanguages] = "languages" (dataToparent)="receiveData($event)" (colorToparent)="receiveColor($event)" ></app-affiche-liste-languages>
+
+<app-affiche-detail-language [bgcolor]="bgcolor" [selectedLanguage]="selectedLanguage"></app-affiche-detail-language>
+
+
+  
