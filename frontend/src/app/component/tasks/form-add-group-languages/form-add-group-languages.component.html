@@ -1,0 +1,81 @@
+<div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-6 text-gray-700">Ajouter un groupe de language</h2>
+    <form (ngSubmit)="onSubmit()" #addGroupLanguageForm="ngForm">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-2" for="name">Titre du language</label>
+        <input
+          id="name"
+          [(ngModel)]="tasks.titreGroupTasks"
+          name="name"
+          type="text"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Entrez titre du language"
+          required
+        #taskInputGroup="ngModel"
+
+        />
+        <div *ngIf="taskInputGroup.invalid && taskInputGroup.touched" class="text-red-500 text-sm">
+            <p *ngIf="taskInputGroup.errors?.['required']">la tache est requise.</p>
+          </div>
+      </div>
+  
+      <!-- Œuvres (Works) -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-medium mb-2" for="works">Ajouter au moins trois leçons</label>
+        <div *ngFor="let tache of tasks.task; let i = index" class="mb-4">
+          <div class="mb-2 flex justify-between items-center">
+            <h3 class="text-lg font-medium text-gray-600">Leçon {{ i + 1 }}</h3>
+            <button
+              type="button"
+              (click)="removetask(i)"
+              class="text-red-600 hover:text-red-800 text-sm"
+            >
+              Supprimer
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-700 font-medium mb-2" for="title">Titre</label>
+              <input
+                id="title"
+                [(ngModel)]="tache.titreTask"
+                name="title{{ i }}"
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Titre de l'œuvre"
+                required
+                #taskInput="ngModel"
+
+              />
+              <div *ngIf="taskInput.invalid && taskInput.touched" class="text-red-500 text-sm">
+                <p *ngIf="taskInput.errors?.['required']">la tache est requise.</p>
+              </div>
+         
+            </div>
+          </div>
+        </div> <!-- Ferme la boucle ngFor -->
+      </div>
+  
+      <!-- Bouton Ajouter une Œuvre -->
+      <div>
+        <button
+          type="button"
+          (click)="addTask()"
+          class="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+        >
+          Ajouter une Œuvre
+        </button>
+      </div>
+  
+      <!-- Bouton Soumettre -->
+      <div class="mt-6">
+        <button
+          type="submit"
+          class="w-full bg-green-500 hover:bg-green-600 text-white font-medium px-4 py-2 rounded-lg"
+        >
+          Enregistrer l'Auteur
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,46 @@
+
+<div class="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2">
+    <!--Title-->
+    <h1 class="flex items-center font-sans font-bold break-normal text-indigo-500 px-2 py-8 text-xl md:text-2xl">
+      Liste des Utilisateurs
+    </h1>
+  
+    <!--Card-->
+    <div id="recipients" class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+      <table id="userTable" class="stripe hover w-full">
+        <thead>
+          <tr>
+            <th data-priority="1">Nom</th>
+            <th data-priority="3">Prenom</th>
+            <th data-priority="2">Email</th>
+            <th data-priority="4">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamically populate rows -->
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{ user.nom }}</td>
+            <td>{{ user.prenom }}</td>
+            <td>{{ user.email }}</td>
+            <td class="flex space-x-2">
+                <!-- Bouton Modifier -->
+                <button
+                  class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
+                  (click)="updateUser(user.id)"
+                >
+                  Modifier
+                </button>
+                <!-- Bouton Supprimer -->
+                <button
+                  class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
+                  (click)="deleteUser(user.id)"
+                >
+                  Supprimer
+                </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+

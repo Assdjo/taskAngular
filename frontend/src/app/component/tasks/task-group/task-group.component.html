@@ -1,0 +1,9 @@
+<div class="flex  flex-wrap justify-center gap-[30px] h-[730px] mb-2">
+   
+    <div class="bg-white px-4 py-2 mx-auto  shadow-lg rounded-lg mt-16 " *ngFor="let Task of taskGroupsList; let i=index">
+        <h2 class="text-gray-800 font-bold text-2xl uppercase">{{ Task.titreGroupTasks }}</h2>
+        <app-task [Task]="Task.task" [taskDesc]="task" [index]="i"></app-task>
+        <app-form-add-task [index] = "Task.id"></app-form-add-task>
+    </div>
+</div>
+
